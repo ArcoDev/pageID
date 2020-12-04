@@ -1,0 +1,94 @@
+//Variables 
+:root {
+    --textos: #FFFFFF;
+    --azul-rey: #2A2FAB;
+    --azul-bajo: #432A95;
+    --morado: #682477;
+    --rosa: #77216B;
+}
+
+//Estilos globales 
+h1 {
+    color: var(--textos);
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+@mixin contentInfo {
+    &-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        img {
+            margin-top: 90px;
+        }
+
+        button {
+            margin: 0 auto;
+            padding: 10px 40px;
+            background: var(--textos);
+            color: var(--morado);
+            font-size: 1rem;
+            font-weight: 900;
+            border: transparent;
+            border-radius: 20px;
+            width: 80%;
+            transition: all .8s ease-in;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+    }
+}
+
+.process {
+    width: 100%;
+    height: 500px;
+    display: flex;
+
+    &-caja {
+        background-color: var(--azul-rey);
+        height: inherit;
+        width: 25%;
+    }
+
+    &-caja {
+        -webkit-transition: all 1.5s linear;
+        -moz-transition: all 1.5s linear;
+        -ms-transition: all 1.5s linear;
+        -o-transition: all 1.5s linear;
+        transition: all 1.5s linear;
+    }
+
+    .div {
+        @include contentInfo();
+    }
+
+    &-arrowR {
+        float: right;
+        margin-right: -40px;
+        top: -40%;
+        position: relative;
+        cursor: pointer;
+    }
+
+    //cambiar color a las cajas mediante id 
+    #design {
+        background-color: var(--azul-bajo);
+    }
+
+    #marketing {
+        background-color: var(--morado);
+    }
+
+    #analysis {
+        background-color: var(--rosa);
+    }
+
+}
